@@ -17,6 +17,118 @@ import java.awt.event.ActionListener;
  */
 public class VistaAgregaAvion extends javax.swing.JFrame {
 
+    /**
+     * @return the campoAnno
+     */
+    public javax.swing.JTextField getCampoAnno() {
+        return campoAnno;
+    }
+
+    /**
+     * @param campoAnno the campoAnno to set
+     */
+    public void setCampoAnno(javax.swing.JTextField campoAnno) {
+        this.campoAnno = campoAnno;
+    }
+
+    /**
+     * @return the campoCantAsientos
+     */
+    public javax.swing.JTextField getCampoCantAsientos() {
+        return campoCantAsientos;
+    }
+
+    /**
+     * @param campoCantAsientos the campoCantAsientos to set
+     */
+    public void setCampoCantAsientos(javax.swing.JTextField campoCantAsientos) {
+        this.campoCantAsientos = campoCantAsientos;
+    }
+
+    /**
+     * @return the campoHorario
+     */
+    public javax.swing.JTextField getCampoHorario() {
+        return campoHorario;
+    }
+
+    /**
+     * @param campoHorario the campoHorario to set
+     */
+    public void setCampoHorario(javax.swing.JTextField campoHorario) {
+        this.campoHorario = campoHorario;
+    }
+
+    /**
+     * @return the campoIdentificador
+     */
+    public javax.swing.JTextField getCampoIdentificador() {
+        return campoIdentificador;
+    }
+
+    /**
+     * @param campoIdentificador the campoIdentificador to set
+     */
+    public void setCampoIdentificador(javax.swing.JTextField campoIdentificador) {
+        this.campoIdentificador = campoIdentificador;
+    }
+
+    /**
+     * @return the campoMarca
+     */
+    public javax.swing.JTextField getCampoMarca() {
+        return campoMarca;
+    }
+
+    /**
+     * @param campoMarca the campoMarca to set
+     */
+    public void setCampoMarca(javax.swing.JTextField campoMarca) {
+        this.campoMarca = campoMarca;
+    }
+
+    /**
+     * @return the campoModelo
+     */
+    public javax.swing.JTextField getCampoModelo() {
+        return campoModelo;
+    }
+
+    /**
+     * @param campoModelo the campoModelo to set
+     */
+    public void setCampoModelo(javax.swing.JTextField campoModelo) {
+        this.campoModelo = campoModelo;
+    }
+
+    /**
+     * @return the campoRuta
+     */
+    public javax.swing.JComboBox<String> getCampoRuta() {
+        return campoRuta;
+    }
+
+    /**
+     * @param campoRuta the campoRuta to set
+     */
+    public void setCampoRuta(javax.swing.JComboBox<String> campoRuta) {
+        this.campoRuta = campoRuta;
+    }
+
+    /**
+     * @return the campoTipo
+     */
+    public javax.swing.JTextField getCampoTipo() {
+        return campoTipo;
+    }
+
+    /**
+     * @param campoTipo the campoTipo to set
+     */
+    public void setCampoTipo(javax.swing.JTextField campoTipo) {
+        this.campoTipo = campoTipo;
+    }
+
     
     public DefaultTableModel dtm = new DefaultTableModel();
     
@@ -40,17 +152,28 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jTextField1 = new javax.swing.JTextField();
+        jToolBar1 = new javax.swing.JToolBar();
+        campoIdentificador = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaAviones = new javax.swing.JTable();
+        campoRuta = new javax.swing.JComboBox<>();
         btnGuardar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        campoHorario = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        campoTipo = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        campoAnno = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        campoModelo = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        campoMarca = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        campoCantAsientos = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaAviones = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -58,59 +181,110 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
 
         jMenuItem1.setText("jMenuItem1");
 
+        jToolBar1.setRollover(true);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(690, 520));
         getContentPane().setLayout(null);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(100, 30, 121, 20);
+        getContentPane().add(campoIdentificador);
+        campoIdentificador.setBounds(160, 20, 121, 20);
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel2.setText("Identificador");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 30, 83, 19);
+        jLabel2.setBounds(10, 20, 83, 19);
 
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel3.setText("Ruta");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(10, 60, 30, 19);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(100, 60, 121, 20);
+        campoRuta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(campoRuta);
+        campoRuta.setBounds(160, 60, 121, 20);
+
+        btnGuardar.setText("Guardar");
+        getContentPane().add(btnGuardar);
+        btnGuardar.setBounds(440, 300, 80, 23);
+
+        btnCancelar.setText("Cancelar");
+        getContentPane().add(btnCancelar);
+        btnCancelar.setBounds(320, 300, 80, 23);
+
+        campoHorario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoHorarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(campoHorario);
+        campoHorario.setBounds(160, 100, 120, 20);
+
+        jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel1.setText("Horario");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 100, 50, 20);
+        getContentPane().add(campoTipo);
+        campoTipo.setBounds(160, 140, 120, 20);
+
+        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel6.setText("Tipo");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(10, 140, 30, 19);
+
+        campoAnno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoAnnoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(campoAnno);
+        campoAnno.setBounds(160, 180, 120, 20);
+
+        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel4.setText("Año");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(10, 180, 30, 19);
+
+        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel7.setText("Modelo");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(10, 220, 50, 19);
+        getContentPane().add(campoModelo);
+        campoModelo.setBounds(160, 220, 120, 20);
+
+        jLabel8.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel8.setText("Marca");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(10, 260, 39, 19);
+        getContentPane().add(campoMarca);
+        campoMarca.setBounds(160, 260, 120, 20);
+
+        jLabel9.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel9.setText("Aviones:");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(10, 340, 110, 20);
+        getContentPane().add(campoCantAsientos);
+        campoCantAsientos.setBounds(160, 300, 120, 20);
 
         tablaAviones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Identificador", "Ruta"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
         jScrollPane1.setViewportView(tablaAviones);
 
-        jScrollPane2.setViewportView(jScrollPane1);
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(12, 370, 560, 170);
 
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(30, 290, 615, 124);
-
-        btnGuardar.setText("Guardar");
-        getContentPane().add(btnGuardar);
-        btnGuardar.setBounds(340, 90, 80, 23);
-
-        btnCancelar.setText("Cancelar");
-        getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(340, 60, 75, 23);
-
-        btnEliminar.setText("Eliminar");
-        getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(340, 30, 80, 23);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/57a032df328f4fcd5e94ae033ccfb910.jpg"))); // NOI18N
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, -30, 780, 510);
+        jLabel10.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        jLabel10.setText("Cantidad de Asientos");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(10, 300, 110, 20);
 
         jMenu1.setText("Opciones");
         jMenuBar1.add(jMenu1);
@@ -125,6 +299,14 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void campoHorarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoHorarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoHorarioActionPerformed
+
+    private void campoAnnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoAnnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoAnnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,20 +345,31 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JTextField campoAnno;
+    private javax.swing.JTextField campoCantAsientos;
+    private javax.swing.JTextField campoHorario;
+    private javax.swing.JTextField campoIdentificador;
+    private javax.swing.JTextField campoMarca;
+    private javax.swing.JTextField campoModelo;
+    private javax.swing.JComboBox<String> campoRuta;
+    private javax.swing.JTextField campoTipo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTable tablaAviones;
     // End of variables declaration//GEN-END:variables
 
@@ -193,8 +386,7 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
     this.controlAgregaAvion = aThis;
     btnGuardar.addActionListener(aThis);
     btnCancelar.addActionListener(aThis);
-    btnEliminar.addActionListener( aThis);
-    }
+     }
 
 //    @Override
 //    public void update(Observable o, Object arg) {

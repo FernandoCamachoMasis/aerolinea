@@ -16,18 +16,18 @@ public class ModeloAgregaAvion {
 
     VistaAgregaAvion vistaAgregaAvion;
     public Avion getAvion() {
-    /*    String identificador = this.vistaAgregaAvion.getCampoIdentificador().getText;               
-        String ruta = this.vistaAgregaAvion.getCampoRuta().getText(); 
-        String horario = this.vistaAgregaAvion.getCampoHorario().getText(); ;        
-        String tipo = this.vistaAgregaAvion.getCampoTipo().getText(); ;
+        String identificador = this.vistaAgregaAvion.getCampoIdentificador().getText();               
+        String ruta = this.vistaAgregaAvion.getCampoRuta().getSelectedItem().toString();
+        String horario = this.vistaAgregaAvion.getCampoHorario().getText();      
+        String tipo = this.vistaAgregaAvion.getCampoTipo().getText(); 
         String año = this.vistaAgregaAvion.getCampoAnno().getText() ;        
         String modelo =  this.vistaAgregaAvion.getCampoModelo().getText();
-        String marca  this.vistaAgregaAvion.getCampoMarca().getText();        
-        int  cantAsientos= this.vistaAgregaAvion.getCampoCantAsientos().getText() ;
-        Avion elAvio = new Avion(identificador, ruta, horario, tipo, año, modelo, marca, cantAsientos);
+        String marca  = this.vistaAgregaAvion.getCampoMarca().getText();        
+        int  cantAsientos = Integer.parseInt(this.vistaAgregaAvion.getCampoCantAsientos().getText()) ;
+        Avion elAvion = new Avion(identificador, ruta, horario, tipo, año, modelo, marca, cantAsientos);
         
-        return elAvion;*/
-    return null;
+
+        return elAvion;
      }
     
     public void setVista(VistaAgregaAvion vistaAgregaAvion){
