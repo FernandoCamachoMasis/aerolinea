@@ -62,7 +62,7 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(690, 520));
         getContentPane().setLayout(null);
         getContentPane().add(jTextField1);
-        jTextField1.setBounds(100, 30, 121, 28);
+        jTextField1.setBounds(100, 30, 121, 20);
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel2.setText("Identificador");
@@ -72,11 +72,11 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         jLabel3.setText("Ruta");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 80, 30, 19);
+        jLabel3.setBounds(10, 60, 30, 19);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBox1);
-        jComboBox1.setBounds(100, 80, 121, 26);
+        jComboBox1.setBounds(100, 60, 121, 20);
 
         tablaAviones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -94,19 +94,19 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jScrollPane1);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(30, 280, 615, 124);
+        jScrollPane2.setBounds(30, 290, 615, 124);
 
         btnGuardar.setText("Guardar");
         getContentPane().add(btnGuardar);
-        btnGuardar.setBounds(350, 110, 73, 28);
+        btnGuardar.setBounds(340, 90, 80, 23);
 
         btnCancelar.setText("Cancelar");
         getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(340, 60, 78, 28);
+        btnCancelar.setBounds(340, 60, 75, 23);
 
         btnEliminar.setText("Eliminar");
         getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(340, 20, 74, 28);
+        btnEliminar.setBounds(340, 30, 80, 23);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/57a032df328f4fcd5e94ae033ccfb910.jpg"))); // NOI18N
         getContentPane().add(jLabel4);
@@ -191,9 +191,9 @@ public class VistaAgregaAvion extends javax.swing.JFrame {
             
     public void setController(ControlAgregaAvion aThis) {
     this.controlAgregaAvion = aThis;
-    btnGuardar.addActionListener((ActionListener) aThis);
-    btnCancelar.addActionListener((ActionListener) aThis);
-    btnEliminar.addActionListener((ActionListener) aThis);
+    btnGuardar.addActionListener(aThis);
+    btnCancelar.addActionListener(aThis);
+    btnEliminar.addActionListener( aThis);
     }
 
 //    @Override

@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import Logica.Avion;
+import oracle.jdbc.OracleTypes;
 
 /**
  *
@@ -20,15 +21,12 @@ public class ServicioAvion  extends Servicio{
     
     
   
-    private static final String INSERTARAVION = "{call insertarAvion(?,?)}";
+    private static final String INSERTARAVION = "{call insertarAvion(?,?,?,?,?,?,?,?)}";
     private static final String ELIMINARAVION = "{call eliminarAvion(?)}";
     private static final String LISTARAVION = "{?=call listarAvion}";
     private static final String CONSULTARAVION = "{?=call buscarAvion(?)}";
 
-    
-    private static ServicioAvion servicioAvion = new ServicioAvion();
-    
-    public void insertarBien(Avion elAvion) throws GlobalException, NoDataException {
+    public void insertarAvion(Avion elAvion) throws GlobalException, NoDataException {
         try {
             conectar();
         } catch (ClassNotFoundException e) {
@@ -44,9 +42,12 @@ public class ServicioAvion  extends Servicio{
             pstmt.setString(1, elAvion.getIdentificador());
             pstmt.setString(2, elAvion.getRuta());
             pstmt.setString(3, elAvion.getHorario());
-            pstmt.setString(4, elAvion.getTipo());
-            
-            
+            pstmt.setString(4, elAvion.getTipo());  
+            pstmt.setString(5, elAvion.getAño());
+            pstmt.setString(6, elAvion.getModelo());
+            pstmt.setString(7, elAvion.getMarca());
+            pstmt.setInt(8, elAvion.getCantidadAsientos());
+       
             
             boolean resultado = pstmt.execute();
             if (resultado == true) {
@@ -103,9 +104,7 @@ public class ServicioAvion  extends Servicio{
 
     }
 
-    
-
-    public Avion buscarBien(String elIdentificador) throws GlobalException, NoDataException {
+    public Avion buscarAvion(String elIdentificador) throws GlobalException, NoDataException {
         try {
             conectar();
         } catch (ClassNotFoundException e) {
@@ -121,17 +120,24 @@ public class ServicioAvion  extends Servicio{
 
         try {
             pstmt = conexion.prepareCall(CONSULTARAVION);
-            //pstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            pstmt.registerOutParameter(1, OracleTypes.CURSOR);
             pstmt.setString(2, elIdentificador);
             pstmt.execute();
             rs = (ResultSet) pstmt.getObject(1);
 
+        
+            
             while (rs.next()) {
                 if (rs.getString("serial").equals(elIdentificador)) {
-                    elAvion = new Avion(rs.getString("identificador"),
+                    elAvion = new Avion(
+                            rs.getString("identificador"),
                             rs.getString("ruta"),
                             rs.getString("horario"),
-                            rs.getString("tipo")
+                            rs.getString("tipo"), 
+                            rs.getString("anno"),
+                            rs.getString("modelo"),
+                            rs.getString("marca"),
+                            rs.getInt("cantAsientos")
                     );
                     break;
                 }
@@ -174,15 +180,20 @@ public class ServicioAvion  extends Servicio{
         CallableStatement pstmt = null;
         try {
             pstmt = conexion.prepareCall(LISTARAVION);
-           // pstmt.registerOutParameter(1, OracleTypes.CURSOR);	
+            pstmt.registerOutParameter(1, OracleTypes.CURSOR);	
             pstmt.execute();
             rs = (ResultSet) pstmt.getObject(1);
             while (rs.next()) {
-                elAvion = new Avion(rs.getString("identificador"),
+                elAvion = new Avion(            
+                        rs.getString("identificador"),
                         rs.getString("ruta"),
                         rs.getString("horario"),
-                        rs.getString("tipo")
-                );
+                        rs.getString("tipo"), 
+                        rs.getString("anno"),
+                        rs.getString("modelo"),
+                        rs.getString("marca"),
+                        rs.getInt("cantAsientos")
+            );
                 coleccion.add(elAvion);
             }
         } catch (SQLException e) {
